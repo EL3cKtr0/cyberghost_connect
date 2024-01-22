@@ -5,7 +5,7 @@ error_country_code() {
     exit 1
 }
 
-read -p "Select country code (launch command 'cyberghost --country-code' to see all country codes avaiable): `echo $'\n> '`" COUNTRY_CODE
+read -p "Select country code (launch this bash command 'cyberghostvpn --country-code' to see all country codes avaiable): `echo $'\n> '`" COUNTRY_CODE
 
 {
     if [[ -z $COUNTRY_CODE ]]; then
