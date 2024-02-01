@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 error_country_code() {
     echo "Error: country code is blank or doesn't exist!"
