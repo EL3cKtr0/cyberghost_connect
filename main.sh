@@ -25,12 +25,10 @@ if [ $# -eq 0 ]; then
         sudo cyberghostvpn --traffic --country-code "$COUNTRY_CODE" --connect
     else
         if [[ $(cyberghostvpn --traffic --country-code "$COUNTRY_CODE" --city "$CITY") ]]; then
-
             SCRAPED_VALUES=$(cyberghostvpn --traffic --country-code "$COUNTRY_CODE" --city "$CITY" | sed '$ d' | sed '1,3d' | tr -d '|' | awk '{print $(NF-1),$NF}' | sort -t' ' -k2 -n)
             SERVER=$(echo $SCRAPED_VALUES | awk '{print $1}')
             echo "Try to connect to the best server $SERVER"
             sudo cyberghostvpn --traffic --country-code "$COUNTRY_CODE" --city "$CITY" --server "$SERVER" --connect
-
         else
             echo "Error, no City avaiable for the country code selected"
             exit 1
