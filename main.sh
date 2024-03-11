@@ -40,4 +40,3 @@ else
     echo "Error: only argument 'stop' is accepted"
 	exit 1
 fi
-
